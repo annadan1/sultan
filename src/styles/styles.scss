@@ -1,0 +1,34 @@
+@import "_variables.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+input {
+  border: none;
+}
+button {
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  @extend %Inter500;
+  font-size: 40px;
+  line-height: 120%;
+}

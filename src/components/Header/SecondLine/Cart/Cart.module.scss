@@ -1,0 +1,38 @@
+@import "../../../../styles/variables";
+
+.container {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $myblack;
+  & span {
+    position: relative;
+    & .count {
+      border-radius: 50%;
+      background-color: $myohra;
+      height: 20px;
+      width: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      @extend %Inter700;
+      font-size: 14px;
+      color: white;
+    }
+  }
+  & .info {
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    @extend %Inter300;
+    font-size: 12px;
+    & :last-child{
+        @extend %Inter600;
+        font-size: 14px;
+    }
+  }
+}

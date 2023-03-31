@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+
+header {
+  & > div {
+    padding: 25px $left_and_rigth_padding;
+  }
+}
+.line {
+  border-bottom: 1px solid $mygrey;
+}

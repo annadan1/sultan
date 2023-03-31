@@ -1,0 +1,15 @@
+@import "../../../styles/variables";
+
+.button {
+  height: 59px;
+  width: 192px;
+  padding: 0;
+  color: white;
+  background-color: $myohra;
+  padding: 0;
+  border-radius: 79px;
+  @extend %Inter700;
+  &:hover{
+    background: $mygold;
+  }
+}

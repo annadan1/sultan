@@ -1,0 +1,19 @@
+@import "../../styles/variables";
+
+.breadcrumbs {
+  display: flex;
+  @extend %Inter300;
+  align-items: center;
+  font-size: 14px;
+  grid-column-gap: 20px;
+  color: $mygrey;
+  height: 10px;
+  & .vl {
+    border-left: 1px dashed #000000;
+    opacity: 5%;
+    height: 100%;
+  }
+  & .last {
+    opacity: 0.5;
+  }
+}

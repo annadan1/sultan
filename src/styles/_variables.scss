@@ -1,0 +1,37 @@
+@use "sass:math";
+
+$myblack: #111111;
+$mygrey: #3f4e65;
+$mygreyblue: linear-gradient(180deg, #6cd0e9 14.1%, #6cade9 57.69%);
+$myblue: linear-gradient(90deg, #39acfd 0%, #5eb9ff 97.25%);
+$myohra: #ffc85e;
+$mygold: #f3a50d;
+
+$left_and_rigth_padding: math.div(270px, 1920px) * 100%;
+
+%Inter300 {
+  font-family: "Inter";
+  font-weight: 300;
+}
+%Inter400 {
+  font-family: "Inter";
+  font-weight: 400;
+}
+%Inter500 {
+  font-family: "Inter";
+  font-weight: 500;
+}
+%Inter600 {
+  font-family: "Inter";
+  font-weight: 600;
+}
+%Inter700 {
+  font-family: "Inter";
+  font-weight: 700;
+}
+%Inter800 {
+  font-family: "Inter";
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 45px;
+}

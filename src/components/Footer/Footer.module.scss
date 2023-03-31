@@ -1,0 +1,124 @@
+@import "../../styles/variables";
+
+footer {
+  background: $mygrey;
+  padding: 70px $left_and_rigth_padding 115px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    & h5 {
+      margin: 0;
+      margin-bottom: 25px;
+      @extend %Inter600;
+      font-size: 20px;
+      line-height: 150%;
+    }
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      @extend %Inter400;
+      font-size: 14px;
+      line-height: 150%;
+      margin-bottom: 20px;
+      &:hover {
+        color: $mygold;
+      }
+    }
+  }
+  & .logoBlock {
+    width: 320px;
+    & h6 {
+      margin: 15px 0 45px;
+      @extend %Inter400;
+      font-size: 16px;
+    }
+    & p {
+      margin-bottom: 14px;
+      @extend %Inter400;
+      font-size: 12px;
+    }
+    & .inputBlock {
+      display: flex;
+      position: relative;
+      & input {
+        border-radius: 36px;
+        width: 270px;
+        height: 59px;
+        padding-left: 13px;
+      }
+      & span {
+        background-color: $myohra;
+        width: 39px;
+        height: 39px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        position: absolute;
+        left: 75%;
+        top: 20%;
+      }
+    }
+  }
+}
+
+.logo {
+  color: white;
+  & path {
+    fill: white;
+  }
+}
+
+.messengersBlock {
+  & p {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  .messengers {
+    display: flex;
+    & button {
+      margin-right: 10px;
+      background: none;
+    }
+  }
+}
+
+.phone {
+  display: flex;
+  flex-direction: column;
+  @extend %Inter300;
+  font-size: 12px;
+  line-height: 18px;
+  margin-top: 25px;
+  & :first-child {
+    @extend %Inter600;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  & :last-child {
+    @extend %Inter400;
+    font-size: 10px;
+    text-decoration: underline;
+    line-height: 15px;
+  }
+}
+
+.address {
+  margin: 25px 0;
+  & span {
+    font-size: 14px;
+    @extend %Inter600;
+  }
+  & p {
+    font-size: 12px;
+    @extend %Inter300;
+  }
+}
+
+.cards {
+  display: flex;
+  grid-column-gap: 5px;
+}

@@ -1,0 +1,84 @@
+@import "../../../styles/variables";
+
+.header {
+  border-bottom: 1px dashed #3f4e65;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0 100px 0;
+  & button {
+    background: $myohra;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 19px;
+    &:hover{
+      background: $mygold;
+    }
+  }
+  & p {
+    @extend %Inter700;
+    font-size: 30px;
+    line-height: 130%;
+  }
+}
+
+.popupContainer {
+  text-align: center;
+  width: 735px;
+  height: 424px;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  & header {
+    padding: 36px 36px 0 36px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+    & button {
+      color: $myohra;
+      background: none;
+      font-size: 30px;
+      &:hover{
+        background: $mygold;
+      }
+    }
+  }
+  & .popup {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    border-radius: 8px;
+    @extend %Inter500;
+    font-size: 40px;
+    & .thanks{
+      padding: 20px
+    }
+    & p {
+      @extend %Inter300;
+      font-size: 20px;
+      color: $mygrey;
+    }
+    & .doubleOk {
+      text-align: center;
+      width: 59px;
+      height: 59px;
+      border-radius: 50%;
+      background: $myohra;
+    }
+  }
+}
+
+.container{
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}

@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+
+main {
+    padding: 50px $left_and_rigth_padding;
+}
+
+.goodsBlockHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

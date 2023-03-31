@@ -1,0 +1,15 @@
+@import "../../../styles/variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    display: flex;
+    grid-column-gap: 30px;
+  }
+  & .vl {
+    border-left: 1px dashed #000000;
+    opacity: 5%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.main {
+  display: flex;
+  .goodsContainer {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

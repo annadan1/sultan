@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  overflow: auto;
+  margin: 150px 0;
+}
+
+.info {
+  font-size: 100px;
+  & button {
+    padding: 20px;
+    background: $myohra;
+    color: white;
+    font-size: 20px;
+    border-radius: 50px;
+    &:hover {
+      background: $mygold;
+    }
+  }
+}

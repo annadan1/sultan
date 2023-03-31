@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+
+.sort {
+  display: flex;
+  position: relative;
+  @extend %Inter500;
+  font-size: 16px;
+  line-height: 150%;
+  align-items: center;
+  & button {
+    background: none;
+    @extend %Inter400;
+    font-size: 16px;
+    color: $mygrey;
+    line-height: 150%;
+  }
+}
+
+.popup {
+  position: absolute;
+  margin-top: 10px;
+  right: 0;
+  top: 0;
+  & .popupContent {
+    & .popupContainer {
+      box-shadow: 0px 15px 70px -11px #2b1c010a;
+      border-radius: 25px;
+      padding: 20px;
+      padding-right: 5px;
+      text-align: end;
+      & .popupItem {
+        @extend %Inter400;
+        font-size: 16px;
+        color: $mygrey;
+        line-height: 150%;
+        list-style-type: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

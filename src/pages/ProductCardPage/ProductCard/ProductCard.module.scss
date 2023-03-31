@@ -1,0 +1,141 @@
+@import "../../../styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 65px;
+  & img {
+    width: 700px;
+    height: 500px;
+    object-fit: contain;
+  }
+  & .info {
+    & span {
+      color: #1fd85d;
+    }
+    & .sizetype {
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+    & h3 {
+      @extend %Inter800;
+      font-size: 30px;
+      margin: 20px 0;
+    }
+    & .calculate {
+      display: flex;
+      width: 70%;
+      justify-content: space-between;
+      align-items: center;
+      & .price {
+        @extend %Inter800;
+        font-size: 30px;
+        line-height: 130%;
+      }
+      & button {
+        background-color: $myohra;
+        height: 59px;
+        width: 184px;
+        color: white;
+        border-radius: 79px;
+        font-size: 14px;
+        @extend %Inter700;
+        line-height: 17px;
+        &:hover{
+          background: $mygold;
+        }
+      }
+      & .buttons {
+        display: flex;
+        & button {
+          margin: 0 17px;
+          width: 34px;
+          height: 23px;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 198, 80, 0.3) 0%,
+            rgba(254, 202, 110, 0.3) 97.25%
+          );
+          border-radius: 1000px;
+        }
+      }
+    }
+  }
+  & .shareBlock {
+    display: flex;
+    grid-column-gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 55px;
+    & div {
+      text-align: center;
+      box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+      border-radius: 10px;
+      padding: 30px;
+      color: $mygrey;
+    }
+    & .share {
+      display: flex;
+      align-items: center;
+    }
+    & .delivery {
+      @extend %Inter400;
+      line-height: 18px;
+      font-size: 12px;
+      max-width: 320px;
+    }
+    & .download {
+      display: flex;
+      align-items: center;
+      @extend %Inter700;
+      font-size: 14px;
+      & svg {
+        margin-left: 10px;
+      }
+      & path {
+        fill: #111111;
+      }
+    }
+  }
+  & .hiddenInfo {
+    max-width: 700px;
+    color: $myblack;
+    & button {
+      @extend %Inter500;
+      font-size: 16px;
+      line-height: 150%;
+      background: none;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      padding: 0;
+    }
+    & > div {
+      @extend %Inter300;
+      font-size: 12px;
+      line-height: 150%;
+    }
+  }
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: $mygrey;
+  line-height: 150%;
+  margin-bottom: 10px;
+  & :first-child {
+    @extend %Inter300;
+  }
+  & :last-child {
+    @extend %Inter500;
+    color: $myblack;
+    margin: 0;
+  }
+}
+
+.hl {
+  border-bottom: 1px dashed #000000;
+  opacity: 5%;
+  width: 250px;
+  margin: 20px 0;
+}

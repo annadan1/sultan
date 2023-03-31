@@ -1,0 +1,17 @@
+@import "../../../styles/variables";
+
+.tiles {
+  display: flex;
+  grid-column-gap: 10px;
+  & button {
+    padding: 0;
+    width: 100px;
+    height: 70px;
+    background: #ffffff;
+    border-radius: 10px;
+    font-size: 14px;
+    @extend %Inter400;
+    color: $mygrey;
+    box-shadow: 0px 15px 70px -11px #2b1c010a;
+  }
+}

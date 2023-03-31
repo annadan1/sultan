@@ -1,0 +1,31 @@
+@import "../../../styles/variables";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  & .arrow {
+    color: $myohra;
+    background: none;
+    margin: 0 35px;
+    & :hover {
+      color: $mygold;
+    }
+  }
+  & .page {
+    background: none;
+    width: 35px;
+    height: 35px;
+  }
+  & .active {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 198, 80, 0.3) 0%,
+      rgba(254, 202, 110, 0.3) 97.25%
+    );
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+  }
+}

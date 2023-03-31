@@ -1,0 +1,10 @@
+@import "../../../../styles/variables";
+
+.button {
+    font-size: 14px;
+    @extend %Inter400;
+    color: $mygrey;
+    background: none;
+    padding: 20px;
+    margin: 0;
+}
