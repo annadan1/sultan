@@ -18,11 +18,11 @@ jobs:
       - name: Install
         run: npm install
 
-      - name: Build
-        run: NODE_ENV=production npm run build
-
       - name: Stubapi
         run: npm run stubapi
+
+      - name: Start
+        run: npm run start
 
       - name: Deploy to GH Page
         uses: JamesIves/github-pages-deploy-action@4.1.1
