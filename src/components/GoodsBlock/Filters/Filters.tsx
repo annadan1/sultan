@@ -89,8 +89,15 @@ const Filters: React.FC = () => {
           setCurrentFilters={setCurrentFilters}
           currentFilters={currentFilters}
         />
-        {Object.entries(manufacturers).map(([ name, value ], index) => (
-          <CheckBox key={index} name={name} count={value} />
+        {Object.entries(manufacturers).map(([name, value], index) => (
+          <CheckBox
+            key={index}
+            name={name}
+            count={value}
+            query={"manufacturer"}
+            setCurrentFilters={setCurrentFilters}
+            currentFilters={currentFilters}
+          />
         ))}
         <h3>Бренд</h3>
         <Search
@@ -98,8 +105,15 @@ const Filters: React.FC = () => {
           setCurrentFilters={setCurrentFilters}
           currentFilters={currentFilters}
         />
-        {Object.entries(brands).map(([ name, value ], index) => (
-          <CheckBox key={index} name={name} count={value} />
+        {Object.entries(brands).map(([name, value], index) => (
+          <CheckBox
+            key={index}
+            name={name}
+            count={value}
+            query={"brand"}
+            setCurrentFilters={setCurrentFilters}
+            currentFilters={currentFilters}
+          />
         ))}
         <div className={styles.buttonsGroup}>
           <button
