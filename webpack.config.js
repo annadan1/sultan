@@ -5,7 +5,9 @@ module.exports = {
   entry: "./src/index.tsx",
 
   devServer: {
-    static: "./dist",
+    static: {
+      directory: path.join(path.resolve(), 'dist'),
+    },
     open: true,
     port: 3001,
   },
@@ -64,6 +66,6 @@ module.exports = {
   ],
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.join(__dirname, 'dist'),
   },
 };
