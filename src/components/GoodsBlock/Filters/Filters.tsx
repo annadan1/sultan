@@ -62,7 +62,6 @@ const Filters: React.FC = () => {
     setCurrentFilters(fields);
     dispatch(actions.changeProp(fields));
   };
-  Object.entries(brands).map(([ name, value ], index) => (console.log(name,value,index)))
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
