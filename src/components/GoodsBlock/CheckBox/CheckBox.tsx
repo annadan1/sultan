@@ -4,7 +4,7 @@ import * as styles from "./CheckBox.module.scss";
 const CheckBox: React.FC<{
   setCurrentFilters?: Function;
   currentFilters?: Object;
-  name: string;
+  name?: string;
   count: number | string;
 }> = (props) => {
   const { name, count } = props;
@@ -17,7 +17,7 @@ const CheckBox: React.FC<{
         value={name}
         checked={isChecked}
       />
-      <div>
+      <div className={styles.box}>
         <div className={styles.name}>{name}</div>
         <div className={styles.count}>({count})</div>
       </div>

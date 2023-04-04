@@ -1,7 +1,13 @@
 @import "../../../styles/variables";
 
 .checkbox {
-  margin: 15px 0;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  & .box {
+    display: flex;
+    align-items: center;
+  }
   & .name {
     font-size: 14px;
     @extend %Inter400;
@@ -9,7 +15,7 @@
     margin-left: 10px;
     line-height: 150%;
   }
-  & .count{
+  & .count {
     margin-left: 5px;
     font-size: 10px;
     @extend %Inter400;

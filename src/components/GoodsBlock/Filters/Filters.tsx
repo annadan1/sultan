@@ -32,7 +32,6 @@ const Filters: React.FC = () => {
       return acc;
     }, {});
 
-
   const fields: Fields = {
     minPrice: 0,
     maxPrice: 10000,
@@ -63,6 +62,7 @@ const Filters: React.FC = () => {
     setCurrentFilters(fields);
     dispatch(actions.changeProp(fields));
   };
+  Object.entries(brands).map(([ name, value ], index) => (console.log(name,value,index)))
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
@@ -90,20 +90,18 @@ const Filters: React.FC = () => {
           setCurrentFilters={setCurrentFilters}
           currentFilters={currentFilters}
         />
-        {manufacturers.length &&
-          Array(manufacturers).map(({ name, value }, index) => (
-            <CheckBox key={index} name={name.toString()} count={value} />
-          ))}
+        {Object.entries(manufacturers).map(([ name, value ], index) => (
+          <CheckBox key={index} name={name} count={value} />
+        ))}
         <h3>Бренд</h3>
         <Search
           query={"brand"}
           setCurrentFilters={setCurrentFilters}
           currentFilters={currentFilters}
         />
-        {brands.length &&
-          Array(brands).map(({ name, value }, index) => (
-            <CheckBox key={index} name={name.toString()} count={value} />
-          ))}
+        {Object.entries(brands).map(([ name, value ], index) => (
+          <CheckBox key={index} name={name} count={value} />
+        ))}
         <div className={styles.buttonsGroup}>
           <button
             type="submit"
