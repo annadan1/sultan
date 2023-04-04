@@ -12,7 +12,7 @@
     color: white;
     border-radius: 25px;
     padding: 10px 19px;
-    &:hover{
+    &:hover {
       background: $mygold;
     }
   }
@@ -39,7 +39,7 @@
       color: $myohra;
       background: none;
       font-size: 30px;
-      &:hover{
+      &:hover {
         background: $mygold;
       }
     }
@@ -52,8 +52,8 @@
     border-radius: 8px;
     @extend %Inter500;
     font-size: 40px;
-    & .thanks{
-      padding: 20px
+    & .thanks {
+      padding: 20px;
     }
     & p {
       @extend %Inter300;
@@ -70,9 +70,9 @@
   }
 }
 
-.container{
+.container {
   background: rgba(0, 0, 0, 0.8);
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   display: flex;
