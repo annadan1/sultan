@@ -7,11 +7,11 @@ import { Store } from "../../types/store";
 import Pagination from "./Pagination/Pagination";
 
 const GoodsBlock: React.FC<{ store: Store }> = (props) => {
-  const { currentGoods, page } = props.store.goods;
+  const { currentGoods, pages, currentPage } = props.store.goods;
 
   return (
     <main>
-      <Breadcrumbs path={['Главная', 'Косметика и гигиена']}/>
+      <Breadcrumbs path={["Главная", "Косметика и гигиена"]} />
       <Header />
       <div className={styles.main}>
         <Filters />
@@ -21,7 +21,7 @@ const GoodsBlock: React.FC<{ store: Store }> = (props) => {
               <CardProduct item={item} key={index} />
             ))}
           </div>
-          <Pagination page={page} />
+          <Pagination pages={pages} currentPage={currentPage} />
         </div>
       </div>
     </main>

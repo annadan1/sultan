@@ -1,11 +1,15 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { actions } from "../../../store/goodsSlice";
 import * as styles from "./Pagination.module.scss";
 
-const Pagination: React.FC<{ page: number }> = ({ page }) => {
-  const [activePage, setPage] = useState(1);
-
+const Pagination: React.FC<{ pages: number; currentPage: number }> = ({
+  pages,
+  currentPage,
+}) => {
+  const dispatch = useDispatch<any>();
   const handleClick = (num: number) => {
-    setPage(num);
+    dispatch(actions.changeCurrentPage(num));
   };
 
   return (
@@ -13,14 +17,14 @@ const Pagination: React.FC<{ page: number }> = ({ page }) => {
       <button
         type="button"
         className={styles.arrow}
-        disabled={activePage === 1}
-        onClick={() => setPage((prev) => prev - 1)}
+        disabled={currentPage === 1}
+        onClick={() => handleClick(currentPage - 1)}
       >
         ᐸ
       </button>
-      {Array.from({ length: page }, (_, i) => i + 1).map((num) => (
+      {Array.from({ length: pages }, (_, i) => i + 1).map((num) => (
         <button
-          className={activePage === num ? styles.active : styles.page}
+          className={currentPage === num ? styles.active : styles.page}
           type="button"
           key={num}
           onClick={() => handleClick(num)}
@@ -31,8 +35,8 @@ const Pagination: React.FC<{ page: number }> = ({ page }) => {
       <button
         type="button"
         className={styles.arrow}
-        disabled={activePage === page}
-        onClick={() => setPage((prev) => prev + 1)}
+        disabled={currentPage === pages}
+        onClick={() => handleClick(currentPage + 1)}
       >
         ᐳ
       </button>

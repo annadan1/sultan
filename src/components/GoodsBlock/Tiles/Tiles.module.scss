@@ -14,4 +14,9 @@
     color: $mygrey;
     box-shadow: 0px 15px 70px -11px #2b1c010a;
   }
+  .activeFilter {
+    background: $myohra;
+    border-color: $mygold;
+    color: #111111;
+  }
 }

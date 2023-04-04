@@ -79,4 +79,8 @@
     justify-content: flex-start;
     padding: 0;
   }
+  .activeFilter {
+    background: $myohra;
+    border-color: $mygold;
+  }
 }

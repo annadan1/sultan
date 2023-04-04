@@ -18,7 +18,7 @@ const SecondLine: React.FC = () => {
           <Frame />
         </button>
       </Link>
-      <Search query={"q"} />
+      <Search query={"name"} />
       <div className={styles.callContainer}>
         <div>
           <p>+7 (777) 490-00-91</p>

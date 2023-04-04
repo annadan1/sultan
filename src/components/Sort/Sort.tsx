@@ -2,6 +2,8 @@ import { useState } from "react";
 import * as styles from "./Sort.module.scss";
 import { useRef } from "react";
 import useOutsideClick from "../../hooks/UseOnclickOutside";
+import { actions } from "../../store/goodsSlice";
+import { useDispatch } from "react-redux";
 
 const sortingMethods: { id: string; value: string }[] = [
   { id: "name_asc", value: "по названию ▲" },
@@ -11,6 +13,8 @@ const sortingMethods: { id: string; value: string }[] = [
 ];
 
 const Sort: React.FC = () => {
+  const dispatch = useDispatch<any>();
+
   const ref = useRef(null);
   const [isOpen, setOpen] = useState(false);
   const [sortingMethod, setSortingMethod] = useState({
@@ -20,6 +24,7 @@ const Sort: React.FC = () => {
 
   const handleClick = (newMethod: { id: string; value: string }) => {
     setSortingMethod(newMethod);
+    dispatch(actions.changeSortMethod(newMethod.id));
     setOpen(false);
   };
 

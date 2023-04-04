@@ -1,22 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Item } from "../types/store";
-
-interface GoodsState {
-  allGoods: Item[];
-  currentGoods: Item[];
-  page: number;
-  limit: number;
-}
+import { Item, Goods } from "../types/store";
 
 interface ManyItem {
   items: Item[];
 }
 
-const initialState: GoodsState = {
+const initialState: Goods = {
   allGoods: [],
   currentGoods: [],
-  page: 1,
+  pages: 1,
+  currentPage: 1,
   limit: 9,
+  sortMethod: "name_asc",
 };
 
 const goodsSlice = createSlice({
@@ -24,12 +19,24 @@ const goodsSlice = createSlice({
   initialState,
   reducers: {
     addAllItems: (state, { payload }: PayloadAction<ManyItem>) => {
-      console.log(payload.items)
       state.allGoods = payload.items;
     },
-    addCurrentItems: (state, { payload }: PayloadAction<ManyItem>) => {
-      state.currentGoods = payload.items;
-      state.page = Math.ceil(payload.items.length / state.limit);
+    addCurrentItems: (state) => {
+      state.currentGoods = state.allGoods.slice(
+        (state.currentPage - 1) * state.limit,
+        state.currentPage * state.limit
+      );
+      state.pages = Math.ceil(state.allGoods.length / state.limit);
+    },
+    changeCurrentPage: (state, { payload }: PayloadAction<number>) => {
+      state.currentPage = payload;
+      state.currentGoods = state.allGoods.slice(
+        (state.currentPage - 1) * state.limit,
+        state.currentPage * state.limit
+      );
+    },
+    changeSortMethod: (state, { payload }: PayloadAction<string>) => {
+      state.sortMethod = payload;
     },
   },
 });

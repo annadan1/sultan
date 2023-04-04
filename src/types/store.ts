@@ -21,13 +21,26 @@ export interface Cart {
   items: Item[];
 }
 
-interface Goods {
+export interface Goods {
   currentGoods: Item[];
   allGoods: Item[];
-  page: number;
+  pages: number;
+  currentPage: number;
+  limit: number;
+  sortMethod: string;
+}
+
+export interface Filters {
+  brand: Array<string>;
+  manufacturer: Array<string>;
+  name: string;
+  categories: Array<string>;
+  minPrice: number;
+  maxPrice: number;
 }
 
 export interface Store {
   goods: Goods;
   cart: Cart;
+  filters: Filters;
 }
