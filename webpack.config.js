@@ -3,10 +3,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
-
+  output: {
+    filename: "[name].js",
+    path: path.join(__dirname, "dist"),
+  },
+  mode: "development",
+  devtool: "source-map",
   devServer: {
     static: {
-      directory: path.join(path.resolve(), 'dist'),
+      directory: path.join(path.resolve(), "dist"),
     },
     open: true,
     port: 3001,
@@ -64,8 +69,4 @@ module.exports = {
       template: path.join(__dirname, "src", "index.html"),
     }),
   ],
-  output: {
-    filename: "[name].js",
-    path: path.join(__dirname, 'dist'),
-  },
 };

@@ -5,10 +5,11 @@
   "main": "./src/index.tsx",
   "homepage": "https://annadan1.github.io/sultan/",
   "scripts": {
-    "test": "",
     "prebuild": "rm -rf dist",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development"
+    "start": "webpack serve --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
     "dotenv-webpack": "^8.0.1",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "json-server": "^0.17.3",
     "node-sass": "^8.0.0",
