@@ -29,7 +29,9 @@ const useFilters = (filters: Filters, array: Array<Item>) => {
     result = result.filter((item) => {
       let isContains = false;
       filters.manufacturer.forEach((manufacturer) =>
-        manufacturer === item.manufacturer ? (isContains = true) : null
+        manufacturer.toLowerCase() === item.manufacturer.toLowerCase()
+          ? (isContains = true)
+          : null
       );
       return isContains;
     });
@@ -39,10 +41,17 @@ const useFilters = (filters: Filters, array: Array<Item>) => {
     result = result.filter((item) => {
       let isContains = false;
       filters.brand.forEach((brand) =>
-      brand === item.brand ? (isContains = true) : null
+        brand.toLowerCase() === item.brand.toLowerCase()
+          ? (isContains = true)
+          : null
       );
       return isContains;
     });
+  }
+  if (filters.name) {
+    result = result.filter((item) =>
+      item.name.toLowerCase().includes(filters.name.toLowerCase())
+    );
   }
 
   return result;

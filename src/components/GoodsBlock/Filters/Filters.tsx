@@ -42,6 +42,11 @@ const Filters = () => {
     dispatch(actions.changeProp(currentFilters));
   };
 
+  const handleClick = () => {
+    setCurrentFilters(fields);
+    dispatch(actions.changeProp(fields));
+  };
+
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       <div className={styles.filters}>
@@ -85,9 +90,7 @@ const Filters = () => {
           <button
             type="button"
             className={styles.trashButton}
-            onClick={() => {
-              setCurrentFilters(fields), handleSubmit;
-            }}
+            onClick={() => handleClick()}
           >
             <Trash />
           </button>
