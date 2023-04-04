@@ -18,7 +18,6 @@ const App: React.FC = () => {
 
   const { sortMethod } = useSelector((state: Store) => state.goods);
   const { filters } = useSelector((state: Store) => state);
-  console.log(filters)
 
   useEffect(() => {
     dispatch(actionsGoods.addAllItems(db));
