@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+
+.checkbox {
+  margin: 15px 0;
+  & .name {
+    font-size: 14px;
+    @extend %Inter400;
+    color: $mygrey;
+    margin-left: 10px;
+    line-height: 150%;
+  }
+  & .count{
+    margin-left: 5px;
+    font-size: 10px;
+    @extend %Inter400;
+    color: $mygrey;
+    line-height: 150%;
+  }
+}

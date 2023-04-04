@@ -5,6 +5,8 @@ import Trash from "../../../assets/svg/trash.svg";
 import { useDispatch } from "react-redux";
 import { actions } from "../../../store/filtersSlice";
 import { useState } from "react";
+import db from "../../../../db.json";
+import CheckBox from "../CheckBox/CheckBox";
 
 interface Fields {
   minPrice: number;
@@ -13,8 +15,23 @@ interface Fields {
   brand: string;
 }
 
-const Filters = () => {
+const Filters: React.FC = () => {
   const dispatch = useDispatch<any>();
+
+  const brands = db.items
+    .map(({ brand }) => brand)
+    .reduce<{ [key: string]: number }>((acc, el) => {
+      acc[el] = (acc[el] || 0) + 1;
+      return acc;
+    }, {});
+
+  const manufacturers = db.items
+    .map(({ manufacturer }) => manufacturer)
+    .reduce<{ [key: string]: number }>((acc, el) => {
+      acc[el] = (acc[el] || 0) + 1;
+      return acc;
+    }, {});
+
 
   const fields: Fields = {
     minPrice: 0,
@@ -73,12 +90,20 @@ const Filters = () => {
           setCurrentFilters={setCurrentFilters}
           currentFilters={currentFilters}
         />
+        {manufacturers.length &&
+          Array(manufacturers).map(({ name, value }, index) => (
+            <CheckBox key={index} name={name.toString()} count={value} />
+          ))}
         <h3>Бренд</h3>
         <Search
           query={"brand"}
           setCurrentFilters={setCurrentFilters}
           currentFilters={currentFilters}
         />
+        {brands.length &&
+          Array(brands).map(({ name, value }, index) => (
+            <CheckBox key={index} name={name.toString()} count={value} />
+          ))}
         <div className={styles.buttonsGroup}>
           <button
             type="submit"
