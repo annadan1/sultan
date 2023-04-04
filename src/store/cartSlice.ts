@@ -24,7 +24,7 @@ const cartSlice = createSlice({
     addItem: (state, { payload }: PayloadAction<Item>) => {
       const findItem = state.items.find((item) => item.id === payload.id);
       if (findItem) {
-        findItem.count += 1;
+        findItem.count! += 1;
       } else {
         state.items.push({ ...payload, count: 1 });
       }
@@ -36,7 +36,7 @@ const cartSlice = createSlice({
     addManyItem: (state, { payload }: PayloadAction<ManyItem>) => {
       const findItem = state.items.find((item) => item.id === payload.item.id);
       if (findItem) {
-        findItem.count += payload.count;
+        findItem.count! += payload.count;
       } else {
         state.items.push({ ...payload.item, count: payload.count });
       }
@@ -50,8 +50,8 @@ const cartSlice = createSlice({
         (item) => item.id === payload.id
       ) as Item;
       state.items = state.items.filter(({ id }) => id !== payload.id);
-      state.totalCount -= findItem.count;
-      state.totalPrice -= Number(payload.price) * findItem.count;
+      state.totalCount -= findItem.count!;
+      state.totalPrice -= Number(payload.price) * findItem.count!;
       const json = JSON.stringify(state);
       localStorage.setItem("cart", json);
     },
@@ -68,7 +68,7 @@ const cartSlice = createSlice({
       if (findItem.count === 1) {
         state.items = state.items.filter(({ id }) => id !== payload.id);
       } else {
-        findItem.count -= 1;
+        findItem.count! -= 1;
       }
       state.totalCount -= 1;
       state.totalPrice -= Number(payload.price);

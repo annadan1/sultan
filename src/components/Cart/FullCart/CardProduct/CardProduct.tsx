@@ -49,7 +49,7 @@ const CardProduct: React.FC<Props> = ({ item }) => {
         {item.count}
         <button
           type="button"
-          disabled={item.inStock - item.count === 0}
+          disabled={item.inStock - item.count! === 0}
           onClick={() => addItem(item)}
         >
           +

@@ -1,13 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import routes from "../routes/index";
-
-interface Item {
-  id: string;
-  name: string;
-  price: number;
-  count: number;
-}
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Item } from "../types/store";
 
 interface GoodsState {
   allGoods: Item[];
@@ -16,27 +8,9 @@ interface GoodsState {
   limit: number;
 }
 
-interface FetchParams {
-  _page?: number;
-  _limit?: number;
-  name?: string;
+interface ManyItem {
+  items: Item[];
 }
-
-export const fetchCurrentGoods = createAsyncThunk(
-  "goods/fetchCurrentGoods",
-  async (params: FetchParams ) => {
-    const response = await axios.get(routes.getGoodsPath(), { params });
-    return response.data;
-  }
-);
-
-export const fetchAllGoods = createAsyncThunk(
-  "goods/fetchAllGoods",
-  async (params: FetchParams) => {
-    const response = await axios.get(routes.getGoodsPath(), { params });
-    return response.data;
-  }
-);
 
 const initialState: GoodsState = {
   allGoods: [],
@@ -48,16 +22,15 @@ const initialState: GoodsState = {
 const goodsSlice = createSlice({
   name: "goodsSlice",
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchCurrentGoods.fulfilled, (state, { payload }) => {
-        state.currentGoods = payload;
-      })
-      .addCase(fetchAllGoods.fulfilled, (state, { payload }) => {
-        state.allGoods = payload;
-        state.page = Math.ceil(payload.length / state.limit);
-      });
+  reducers: {
+    addAllItems: (state, { payload }: PayloadAction<ManyItem>) => {
+      console.log(payload.items)
+      state.allGoods = payload.items;
+    },
+    addCurrentItems: (state, { payload }: PayloadAction<ManyItem>) => {
+      state.currentGoods = payload.items;
+      state.page = Math.ceil(payload.items.length / state.limit);
+    },
   },
 });
 

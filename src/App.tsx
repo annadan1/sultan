@@ -6,20 +6,17 @@ import ProductCardPage from "./pages/ProductCardPage/ProductCardPage";
 import NotfoundPage from "./pages/NotfoundPage/NotfoundPage";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { fetchAllGoods, fetchCurrentGoods } from "./store/goodsSlice";
+import { actions as actionsGoods } from "./store/goodsSlice";
 import { actions } from "./store/cartSlice";
-import { Cart } from "./types/store";
-
-interface MyCart {
-  cart: Cart;
-}
+import { Cart, Item } from "./types/store";
+import db from "../db.json";
 
 const App: React.FC = () => {
   const dispatch = useDispatch<any>();
 
   useEffect(() => {
-    dispatch(fetchAllGoods({}));
-    dispatch(fetchCurrentGoods({ _limit: 9 }));
+    dispatch(actionsGoods.addAllItems(db));
+    dispatch(actionsGoods.addCurrentItems(db));
     const currentCart = localStorage.getItem("cart");
     if (currentCart) {
       const cart: Cart = JSON.parse(currentCart);

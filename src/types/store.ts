@@ -1,7 +1,7 @@
 export interface Item {
   barcode: string;
   brand: string;
-  category: [];
+  category: string[];
   description: string;
   id: string;
   img: string;
@@ -12,13 +12,13 @@ export interface Item {
   size: string;
   sizetype: string;
   inStock: number;
-  count: number;
+  count?: number | undefined;
 }
 
 export interface Cart {
   totalCount: number;
   totalPrice: number;
-  items: Array<Item>;
+  items: Item[];
 }
 
 interface Goods {
