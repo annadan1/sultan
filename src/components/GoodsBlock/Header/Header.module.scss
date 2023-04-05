@@ -1,11 +1,17 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 main {
-    padding: 50px $left_and_rigth_padding;
+  padding: 50px $left_and_rigth_padding;
 }
 
 .goodsBlockHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1890px) {
+  main {
+    padding: 50px 70px;
+  }
 }

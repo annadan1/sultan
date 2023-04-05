@@ -3,6 +3,7 @@
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   & button {
     height: 59px;
     width: 192px;

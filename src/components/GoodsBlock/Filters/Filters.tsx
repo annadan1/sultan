@@ -1,12 +1,10 @@
 import Tiles from "../Tiles/Tiles";
 import * as styles from "./Filters.module.scss";
-import Search from "../../Search/Search";
 import Trash from "../../../assets/svg/trash.svg";
 import { useDispatch } from "react-redux";
 import { actions } from "../../../store/filtersSlice";
 import { useState } from "react";
 import db from "../../../../db.json";
-import CheckBox from "../CheckBox/CheckBox";
 import FilterSections from "./FilterSections/FilterSections";
 
 interface Fields {

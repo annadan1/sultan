@@ -8,3 +8,11 @@ header {
 .line {
   border-bottom: 1px solid $mygrey;
 }
+
+@media (max-width: 1890px) {
+  header {
+    & > div {
+      padding: 25px 70px;
+    }
+  }
+}

@@ -122,3 +122,9 @@ footer {
   display: flex;
   grid-column-gap: 5px;
 }
+
+@media (max-width: 1890px) {
+  footer {
+    padding: 70px 70px 115px;
+  }
+}
