@@ -15,7 +15,6 @@ const CheckBox: React.FC<{
     if (currentFilters[query].length === 0) {
       setIsChecked(false);
     }
-    console.log(currentFilters);
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

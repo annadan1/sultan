@@ -7,6 +7,7 @@ import { actions } from "../../../store/filtersSlice";
 import { useState } from "react";
 import db from "../../../../db.json";
 import CheckBox from "../CheckBox/CheckBox";
+import FilterSections from "./FilterSections/FilterSections";
 
 interface Fields {
   minPrice: number;
@@ -84,37 +85,19 @@ const Filters: React.FC = () => {
           />
         </div>
         <h3>Производитель</h3>
-        <Search
+        <FilterSections
+          sections={manufacturers}
           query={"manufacturer"}
           setCurrentFilters={setCurrentFilters}
           currentFilters={currentFilters}
         />
-        {Object.entries(manufacturers).map(([name, value], index) => (
-          <CheckBox
-            key={index}
-            name={name}
-            count={value}
-            query={"manufacturer"}
-            setCurrentFilters={setCurrentFilters}
-            currentFilters={currentFilters}
-          />
-        ))}
         <h3>Бренд</h3>
-        <Search
+        <FilterSections
+          sections={brands}
           query={"brand"}
           setCurrentFilters={setCurrentFilters}
           currentFilters={currentFilters}
         />
-        {Object.entries(brands).map(([name, value], index) => (
-          <CheckBox
-            key={index}
-            name={name}
-            count={value}
-            query={"brand"}
-            setCurrentFilters={setCurrentFilters}
-            currentFilters={currentFilters}
-          />
-        ))}
         <div className={styles.buttonsGroup}>
           <button
             type="submit"
