@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as styles from "./CheckBox.module.scss";
 
 const CheckBox: React.FC<{
@@ -11,17 +11,24 @@ const CheckBox: React.FC<{
   const { name, count, setCurrentFilters, currentFilters, query } = props;
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
+  useEffect(() => {
+    if (currentFilters[query].length === 0) {
+      setIsChecked(false);
+    }
+    console.log(currentFilters);
+  });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     let currArray = currentFilters[query];
-    if (currArray.includes(value)){
-        currArray = currArray.filter((i: string) => i !== value)
+    if (currArray.includes(value)) {
+      currArray = currArray.filter((i: string) => i !== value);
     } else {
-        currArray.push(value)
+      currArray = [...currArray, value];
     }
-    
-    setCurrentFilters({...currentFilters, [query]: currArray});
-    
+
+    setCurrentFilters({ ...currentFilters, [query]: currArray });
+
     setIsChecked(!isChecked);
   };
 
