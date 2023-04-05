@@ -10,7 +10,14 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <div className={styles.logoBlock}>
-        <Logo className={styles.logo} />
+        <div className={styles.continer}>
+          <div className={styles.logo}>
+            <Logo />
+          </div>
+          <div className={styles.containerForButton}>
+            <DownloadPriceButton />
+          </div>
+        </div>
         <h6>
           Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в
           Кокчетаве и Акмолинской области
@@ -37,8 +44,10 @@ const Footer: React.FC = () => {
         <a>Посуда</a>
       </div>
       <div className={styles.messengersBlock}>
-        <h5>Скачать прайс-лист:</h5>
-        <DownloadPriceButton />
+        <div className={styles.messengersBlockPrice}>
+          <h5>Скачать прайс-лист:</h5>
+          <DownloadPriceButton />
+        </div>
         <p>Связь в мессенджерах:</p>
         <div className={styles.messengers}>
           <button>
@@ -49,7 +58,7 @@ const Footer: React.FC = () => {
           </button>
         </div>
       </div>
-      <div>
+      <div className={styles.contactBlock}>
         <h5>Контакты:</h5>
         <div className={styles.phone}>
           <p>+7 (777) 490-00-91</p>

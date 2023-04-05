@@ -30,9 +30,22 @@ footer {
   }
   & .logoBlock {
     width: 320px;
-    & svg {
-      width: 156px;
-      height: 66px;
+
+    & .logo {
+      color: white;
+      & path {
+        fill: white;
+        width: 156px;
+        height: 66px;
+      }
+      & svg {
+        width: 156px;
+        height: 66px;
+      }
+    }
+
+    & .downloadPriceButton {
+      display: none;
     }
     & h6 {
       margin: 15px 0 45px;
@@ -47,6 +60,7 @@ footer {
     & .inputBlock {
       display: flex;
       position: relative;
+      width: 270px;
       & input {
         border-radius: 36px;
         width: 270px;
@@ -62,19 +76,10 @@ footer {
         justify-content: center;
         border-radius: 50%;
         position: absolute;
-        left: 75%;
+        left: 80%;
         top: 20%;
       }
     }
-  }
-}
-
-.logo {
-  color: white;
-  & path {
-    fill: white;
-    width: 156px;
-    height: 66px;
   }
 }
 
@@ -92,23 +97,25 @@ footer {
   }
 }
 
-.phone {
-  display: flex;
-  flex-direction: column;
-  @extend %Inter300;
-  font-size: 12px;
-  line-height: 18px;
-  margin-top: 25px;
-  & :first-child {
-    @extend %Inter600;
-    font-size: 14px;
-    line-height: 21px;
-  }
-  & :last-child {
-    @extend %Inter400;
-    font-size: 10px;
-    text-decoration: underline;
-    line-height: 15px;
+.contactBlock {
+  & .phone {
+    display: flex;
+    flex-direction: column;
+    @extend %Inter300;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 25px;
+    & :first-child {
+      @extend %Inter600;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    & :last-child {
+      @extend %Inter400;
+      font-size: 10px;
+      text-decoration: underline;
+      line-height: 15px;
+    }
   }
 }
 
@@ -135,8 +142,56 @@ footer {
   }
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1390px) {
   footer {
     padding: 70px 50px 115px;
+    flex-wrap: wrap;
+    & .logoBlock {
+      width: 100%;
+      margin-bottom: 30px;
+      & .containerForButton {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 788px) {
+  footer {
+    padding: 70px 50px 115px;
+    flex-wrap: wrap;
+    & > div {
+      width: 50%;
+    }
+    & > div:nth-child(1) {
+      width: 100%;
+    }
+    & > div {
+      width: 50%;
+    }
+    & .continer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    & .logoBlock {
+      width: 100%;
+      margin-bottom: 50px;
+      & .containerForButton {
+        display: block;
+      }
+    }
+  }
+  .messengersBlockPrice {
+    display: none;
+  }
+  .messengersBlock {
+    order: 2;
+    & > p {
+      margin-top: 80px;
+    }
+  }
+  .contactBlock {
+    order: 1;
   }
 }

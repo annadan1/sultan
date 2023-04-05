@@ -10,7 +10,7 @@ const initialState: Goods = {
   currentGoods: [],
   pages: 1,
   currentPage: 1,
-  limit: 12,
+  limit: 6,
   sortMethod: "name_asc",
 };
 

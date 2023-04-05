@@ -37,30 +37,38 @@ const CardProduct: React.FC<Props> = ({ item }) => {
         <div className={styles.name}>{item.name}</div>
         <div className={styles.description}>{item.description}</div>
       </div>
-      <p className={styles.vl}></p>
-      <div className={styles.calculate}>
+      <p className={styles.vl1380}></p>
+      <div className={styles.calculateBlock}>
+        <div className={styles.calculate}>
+          <button
+            type="button"
+            disabled={item.count === 1}
+            onClick={() => minusItem(item)}
+          >
+            -
+          </button>
+          {item.count}
+          <button
+            type="button"
+            disabled={item.inStock - item.count! === 0}
+            onClick={() => addItem(item)}
+          >
+            +
+          </button>
+        </div>
+        <p className={styles.vl}></p>
+        <div className={styles.price}>
+          {Number(item.count) * Number(item.price)} ₸
+        </div>
+        <p className={styles.vl}></p>
         <button
           type="button"
-          disabled={item.count === 1}
-          onClick={() => minusItem(item)}
+          className={styles.trash}
+          onClick={() => removeItem(item)}
         >
-          -
-        </button>
-        {item.count}
-        <button
-          type="button"
-          disabled={item.inStock - item.count! === 0}
-          onClick={() => addItem(item)}
-        >
-          +
+          <Trash />
         </button>
       </div>
-      <p className={styles.vl}></p>
-      <div className={styles.price}>{Number(item.count) * Number(item.price)} ₸</div>
-      <p className={styles.vl}></p>
-      <button type="button" className={styles.trash} onClick={() => removeItem(item)}>
-        <Trash />
-      </button>
     </div>
   );
 };
