@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .main {
   display: flex;
@@ -10,3 +10,10 @@
   }
 }
 
+@media (max-width: 1380px) {
+  .main {
+    .goodsContainer {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

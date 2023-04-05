@@ -3,6 +3,8 @@
 .container {
   display: flex;
   align-items: center;
+  margin-right: 60px;
+  gap: 18px;
   .address {
     & span {
       font-size: 14px;
@@ -15,6 +17,8 @@
   }
 }
 
-.svg {
-  margin-right: 18px;
+@media (max-width: 1380px) {
+  .container {
+    margin-right: 40px;
+  }
 }

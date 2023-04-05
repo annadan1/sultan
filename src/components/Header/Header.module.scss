@@ -16,3 +16,10 @@ header {
     }
   }
 }
+@media (max-width: 1380px) {
+  header {
+    & > div {
+      padding: 25px 50px;
+    }
+  }
+}

@@ -14,7 +14,7 @@
     border-radius: 79px;
     @extend %Inter700;
     margin: 0 15px 0 25px;
-    &:hover{
+    &:hover {
       background: $mygold;
     }
   }
@@ -66,6 +66,52 @@
   margin-left: 25px;
 }
 
-.logo {
-  margin-right: 13px;
+.logoBlock {
+  & svg {
+    width: 156px;
+    height: 66px;
+  }
+  .logo {
+    margin-right: 13px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .callContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    & .callIcon {
+      margin-left: 10px;
+      height: 93px;
+      width: 64px;
+      overflow: hidden;
+      border-radius: 50px;
+    }
+  }
+  .container {
+    & button {
+      height: 59px;
+      width: 162px;
+      margin: 0 10px 0 10px;
+    }
+  }
+  .vl {
+    margin-left: 10px;
+  }
+  .logoBlock {
+    .logo {
+      margin-right: 0;
+    }
+    & svg {
+      width: 146px;
+      height: 56px;
+    }
+  }
+}
+
+@media (max-width: 1380px) {
+  .callContainer {
+    display: none;
+  }
 }

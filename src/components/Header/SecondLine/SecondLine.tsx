@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const SecondLine: React.FC = () => {
   return (
     <div className={styles.container}>
-      <Link to="/">
+      <Link to="/" className={styles.logoBlock}>
         <Logo className={styles.logo} />
       </Link>
       <Link to="/catalog">

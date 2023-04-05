@@ -5,6 +5,7 @@
     @extend %Inter400;
     color: $mygrey;
     background: none;
-    padding: 20px;
+    padding: 20px 0;
     margin: 0;
+    white-space: nowrap;
 }

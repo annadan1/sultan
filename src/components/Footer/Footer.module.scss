@@ -30,6 +30,10 @@ footer {
   }
   & .logoBlock {
     width: 320px;
+    & svg {
+      width: 156px;
+      height: 66px;
+    }
     & h6 {
       margin: 15px 0 45px;
       @extend %Inter400;
@@ -69,6 +73,8 @@ footer {
   color: white;
   & path {
     fill: white;
+    width: 156px;
+    height: 66px;
   }
 }
 
@@ -126,5 +132,11 @@ footer {
 @media (max-width: 1890px) {
   footer {
     padding: 70px 70px 115px;
+  }
+}
+
+@media (max-width: 1380px) {
+  footer {
+    padding: 70px 50px 115px;
   }
 }

@@ -36,3 +36,12 @@
     }
   }
 }
+
+@media (max-width: 1500px) {
+  .container {
+    margin-left: 10px;
+    & .info {
+      margin-left: 10px;
+    }
+  }
+}

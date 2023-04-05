@@ -4,7 +4,7 @@ import * as styles from "./Mail.module.scss";
 const Mail: React.FC = () => {
   return (
     <div className={styles.container}>
-      <Envelope className={styles.svg} />
+      <Envelope />
       <div className={styles.address}>
         <span>гopt.sultan@mail.ru</span>
         <p>На связи в любое время</p>

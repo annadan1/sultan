@@ -3,6 +3,7 @@
 .container {
   display: flex;
   align-items: center;
+  gap: 18px;
   .address {
     & span {
       font-size: 14px;
@@ -15,6 +16,3 @@
   }
 }
 
-.svg {
-  margin-right: 18px;
-}
