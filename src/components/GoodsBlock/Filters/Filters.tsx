@@ -11,8 +11,8 @@ import CheckBox from "../CheckBox/CheckBox";
 interface Fields {
   minPrice: number;
   maxPrice: number;
-  manufacturer: string;
-  brand: string;
+  manufacturer: [];
+  brand: [];
 }
 
 const Filters: React.FC = () => {
@@ -35,8 +35,8 @@ const Filters: React.FC = () => {
   const fields: Fields = {
     minPrice: 0,
     maxPrice: 10000,
-    manufacturer: "",
-    brand: "",
+    manufacturer: [],
+    brand: [],
   };
 
   const [currentFilters, setCurrentFilters] = useState(fields);

@@ -3,7 +3,7 @@ import * as styles from "./CheckBox.module.scss";
 
 const CheckBox: React.FC<{
   setCurrentFilters: Function;
-  currentFilters: Object;
+  currentFilters: Record<string, any>;
   query: string;
   name: string;
   count: number | string;
@@ -13,7 +13,15 @@ const CheckBox: React.FC<{
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    setCurrentFilters({ ...currentFilters, [query]: [value] });
+    let currArray = currentFilters[query];
+    if (currArray.includes(value)){
+        currArray = currArray.filter((i: string) => i !== value)
+    } else {
+        currArray.push(value)
+    }
+    
+    setCurrentFilters({...currentFilters, [query]: currArray});
+    
     setIsChecked(!isChecked);
   };
 
