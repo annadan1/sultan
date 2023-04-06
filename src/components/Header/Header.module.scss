@@ -4,9 +4,19 @@ header {
   & > div {
     padding: 25px $left_and_rigth_padding;
   }
-}
-.line {
-  border-bottom: 1px solid $mygrey;
+  & .firstline {
+    border-bottom: 1px solid $mygrey;
+    opacity: 0.1;
+  }
+  & .secondline {
+    border-bottom: 1px solid $mygrey;
+    opacity: 0.1;
+  }
+  & .mobileline {
+    display: none;
+    border-bottom: 1px solid $mygrey;
+    opacity: 0.1;
+  }
 }
 
 @media (max-width: 1890px) {
@@ -16,10 +26,28 @@ header {
     }
   }
 }
+
 @media (max-width: 1380px) {
   header {
     & > div {
       padding: 25px 50px;
+    }
+  }
+}
+
+@media (max-width: 1160px) {
+  .firstline {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    & .mobileline {
+      display: block;
+      border-bottom: 1px solid $mygrey;
+      opacity: 0.1;
+      width: 100%;
     }
   }
 }

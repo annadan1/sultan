@@ -18,7 +18,11 @@
       background: $mygold;
     }
   }
+  & .containerButton {
+    display: flex;
+  }
 }
+
 .callContainer {
   display: flex;
   align-items: center;
@@ -66,16 +70,6 @@
   margin-left: 25px;
 }
 
-.logoBlock {
-  & svg {
-    width: 156px;
-    height: 66px;
-  }
-  .logo {
-    margin-right: 13px;
-  }
-}
-
 @media (max-width: 1500px) {
   .callContainer {
     display: flex;
@@ -99,19 +93,24 @@
   .vl {
     margin-left: 10px;
   }
-  .logoBlock {
-    .logo {
-      margin-right: 0;
-    }
-    & svg {
-      width: 146px;
-      height: 56px;
-    }
-  }
 }
 
 @media (max-width: 1380px) {
   .callContainer {
+    display: none;
+  }
+  .container {
+    & .containerButton {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .searchContainer {
+    display: none;
+  }
+  .catalogContainer {
     display: none;
   }
 }

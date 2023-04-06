@@ -1,0 +1,21 @@
+.logoBlock {
+  & svg {
+    width: 156px;
+    height: 66px;
+  }
+  .logo {
+    margin-right: 13px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .logoBlock {
+    .logo {
+      margin-right: 0;
+    }
+    & svg {
+      width: 146px;
+      height: 56px;
+    }
+  }
+}

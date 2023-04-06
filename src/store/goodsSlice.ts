@@ -27,6 +27,7 @@ const goodsSlice = createSlice({
         state.currentPage * state.limit
       );
       state.pages = Math.ceil(state.allGoods.length / state.limit);
+      state.currentPage = 1;
     },
     changeCurrentPage: (state, { payload }: PayloadAction<number>) => {
       state.currentPage = payload;

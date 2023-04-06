@@ -44,7 +44,7 @@ footer {
       }
     }
 
-    & .downloadPriceButton {
+    & .containerForButton {
       display: none;
     }
     & h6 {
@@ -139,6 +139,11 @@ footer {
 @media (max-width: 1890px) {
   footer {
     padding: 70px 70px 115px;
+    & .logoBlock {
+      & .containerForButton {
+        display: none;
+      }
+    }
   }
 }
 

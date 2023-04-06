@@ -45,3 +45,11 @@
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .container {
+    & .info {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.modileBurger {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .modileBurger {
+    display: block;
+    & button {
+      width: 59px;
+      height: 59px;
+    }
+  }
+}

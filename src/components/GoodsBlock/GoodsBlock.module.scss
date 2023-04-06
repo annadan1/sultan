@@ -24,3 +24,16 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .main {
+    flex-direction: column;
+    form {
+      width: 100%;
+    }
+    .goodsContainer {
+      margin-left: 0;
+      grid-template-columns: 1fr;
+    }
+  }
+}
